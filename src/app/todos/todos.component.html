@@ -38,36 +38,6 @@
 <br>
 <hr>
 
-<!-- <div class="container col-md-2">
-    <div class="search-box">
-        <input type="text" class="form-control" placeholder="search your task here...">
-    </div>
-</div> -->
-
-<!-- <div class="container col-md-2 filter-buttons">
-    <label>Filter by Priority</label>
-    <select [(ngModel)]="selectedPriority" (change)="filterByPriority()" class="form-control">
-        <option value="all">All</option>
-        <option value="high">High</option>
-        <option value="medium">Medium</option>
-        <option value="low">Low</option>
-      </select>
-</div>
-
-<section>
-   <div class="container">
-    <div class="todo-list">
-        <app-todo-item 
-            *ngFor="let todo of todos" 
-            [todo]="todo"
-            (todoClicked)="toggleCompleted(todo)"
-            (editClicked)="editTodo(todo)"
-            (deleteClicked)="deleteTodo(todo)"
-        ></app-todo-item>
-    </div>
-   </div>
-</section> -->
-
 <div class="container col-md-2 filter-buttons">
     <label class="filter-label">Filter by Priority</label>
     <select [(ngModel)]="selectedPriority" (change)="filterByPriority()" class="form-select">

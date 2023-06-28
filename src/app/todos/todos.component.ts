@@ -14,15 +14,8 @@ export class TodosComponent implements OnInit {
 
     todos: Todo[]
     showValidationErrors: boolean = false
-     selectedPriority: string = 'all';
-     filteredItems: any[];
-
-    // items: any[] = [
-    //     { name: 'Item 1', priority: 'high' },
-    //     { name: 'Item 2', priority: 'medium' },
-    //     { name: 'Item 3', priority: 'low' },
-    // ];
-
+    selectedPriority: string = 'all';
+    filteredItems: any[];
 
     constructor(
         private formBuilder: FormBuilder,
