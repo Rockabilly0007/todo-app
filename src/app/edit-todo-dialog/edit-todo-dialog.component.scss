@@ -1,0 +1,15 @@
+.title {
+    margin-bottom: 8px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: right;
+    align-items:end;
+    right: 0;
+    bottom: 0;
+    
+    .btn-danger {
+        margin-right: 4px;
+    }
+}

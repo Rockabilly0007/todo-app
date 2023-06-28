@@ -1,0 +1,16 @@
+<div modal mat-dialog-content>
+    <h3 class="title">Edit ToDo</h3>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+        <div class="field">
+            <div class="control">
+                <input type="text" [ngModel]="todo.text" class="form-control" 
+                name="text" placeholder="Type the new task here..." required minlength="3">
+            </div>
+            <br>
+            <div class="field buttons">
+                <button type="button" class="btn btn-danger mr-2" (click)="onCancel()">Cancel</button>
+                <button type="submit" class="btn btn-success" [disabled]="!form.valid">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

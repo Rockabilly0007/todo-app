@@ -1,0 +1,98 @@
+<section class="heading">
+    <h1 class="title">To Do List</h1>
+</section>
+
+<div class="container">
+    <div class="add-todo">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <h5>New Todo</h5>
+            <div class="control mb-2">
+                <label>Describe your task</label>
+                <input type="text" ngModel name="text" class="form-control" placeholder="Ex: Walk the dog..." 
+                #todoTextError="ngModel" required minlength="3">
+                <span *ngIf="todoTextError.errors && todoTextError.touched">Task name is required.</span>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Due Date</label>
+                    <input name="date" ngModel #date type="date" class="form-control">
+                    <span *ngIf="date.value === '' || form.invalid">Due date is required.</span>
+                </div>
+                <div class="col-md-4">
+                    <label>Priority</label>
+                    <select ngModel #priority name="priority" class="form-select">
+                        <option value="Low" selected>Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <span *ngIf="priority.value === '' || form.invalid">Please select a priority.</span>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">+ Add New Todo</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+<hr>
+
+<!-- <div class="container col-md-2">
+    <div class="search-box">
+        <input type="text" class="form-control" placeholder="search your task here...">
+    </div>
+</div> -->
+
+<!-- <div class="container col-md-2 filter-buttons">
+    <label>Filter by Priority</label>
+    <select [(ngModel)]="selectedPriority" (change)="filterByPriority()" class="form-control">
+        <option value="all">All</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+</div>
+
+<section>
+   <div class="container">
+    <div class="todo-list">
+        <app-todo-item 
+            *ngFor="let todo of todos" 
+            [todo]="todo"
+            (todoClicked)="toggleCompleted(todo)"
+            (editClicked)="editTodo(todo)"
+            (deleteClicked)="deleteTodo(todo)"
+        ></app-todo-item>
+    </div>
+   </div>
+</section> -->
+
+<div class="container col-md-2 filter-buttons">
+    <label class="filter-label">Filter by Priority</label>
+    <select [(ngModel)]="selectedPriority" (change)="filterByPriority()" class="form-select">
+        <option value="all">All</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+</div>
+
+<section>
+   <div class="container">
+    <div class="todo-list">
+        <app-todo-item 
+            *ngFor="let todo of filteredTodos" 
+            [todo]="todo"
+            (todoClicked)="toggleCompleted(todo)"
+            (editClicked)="editTodo(todo)"
+            (deleteClicked)="deleteTodo(todo)"
+        ></app-todo-item>
+    </div>
+   </div>
+</section>
+
+
+<footer>
+    <p>© Copyright 2020 - 2023 Scoot.test</p>
+</footer>

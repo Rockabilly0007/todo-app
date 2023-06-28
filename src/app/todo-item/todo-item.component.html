@@ -1,0 +1,21 @@
+<div class="todo-item completed" (click)="onTodoClicked()"
+        [class.completed]="todo.completed">
+    <div class="check-box">
+        <i class="fa-solid fa-check"></i>
+    </div>
+    
+    <div class="todo-text">
+        {{ todo.text }}
+    </div>
+    <span class="complete-time"><i class="fa-solid fa-clock"></i> Complete Until: {{ todo.date | date }}</span>
+    <small class="priority"> {{ todo.priority }} Priority</small>
+   
+    <div class="control-box" (click)="$event.stopPropagation()">
+        <div class="control-button" (click)="onEdit()">
+            <i class="fa-solid fa-pen"></i>
+        </div>
+        <div class="control-button" (click)="onDelete()">
+            <i class="fa-solid fa-trash"></i>
+        </div>
+    </div>
+</div>
