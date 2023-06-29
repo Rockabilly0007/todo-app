@@ -72,11 +72,4 @@ export class TodosComponent implements OnInit {
         }
     }
 
-    get filteredTodos(): Todo[] {
-        if (this.selectedPriority === 'all') {
-          return this.todos;
-        } else {
-          return this.todos.filter(todo => todo.priority === this.selectedPriority);
-        }
-    }
 }

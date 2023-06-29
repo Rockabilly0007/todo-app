@@ -52,7 +52,7 @@
    <div class="container">
     <div class="todo-list">
         <app-todo-item 
-            *ngFor="let todo of filteredTodos" 
+            *ngFor="let todo of todos" 
             [todo]="todo"
             (todoClicked)="toggleCompleted(todo)"
             (editClicked)="editTodo(todo)"
