@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../shared/todo.model';
+import tippy from 'tippy.js'
 
 @Component({
   selector: 'app-todo-item',

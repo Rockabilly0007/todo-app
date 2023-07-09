@@ -16,7 +16,7 @@ export class EditTodoDialogComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {   
-        console.log(this.todo.text);
+        //console.log(this.todo.text);
     }
 
     onFormSubmit(form: NgForm) {

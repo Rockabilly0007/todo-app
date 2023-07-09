@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../shared/todo.model';
 import { DataService } from '../shared/data.service';
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
 
@@ -18,7 +18,6 @@ export class TodosComponent implements OnInit {
     filteredItems: any[];
 
     constructor(
-        private formBuilder: FormBuilder,
         private dataService: DataService,
         private dialog: MatDialog
     ) {}
@@ -28,8 +27,7 @@ export class TodosComponent implements OnInit {
     }
 
     onFormSubmit(form: NgForm) {   
-        console.log(form.value);
-        
+       //console.log(form.value);
         if (form.invalid) {
             return this.showValidationErrors = true
         }

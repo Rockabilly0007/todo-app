@@ -2,7 +2,7 @@
     <h1 class="title">To Do List</h1>
 </section>
 
-<div class="container">
+<div class="container add-todo-box">
     <div class="add-todo">
         <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
             <h5>New Todo</h5>
@@ -15,17 +15,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <label>Due Date</label>
-                    <input name="date" ngModel #date type="date" class="form-control">
-                    <span *ngIf="date.value === '' || form.invalid">Due date is required.</span>
+                    <input name="date" ngModel #date type="date" class="form-control" required>
+                    <span *ngIf="date.value === '' && form.invalid">Due date is required.</span>
                 </div>
                 <div class="col-md-4">
                     <label>Priority</label>
-                    <select ngModel #priority name="priority" class="form-select">
+                    <select ngModel #priority name="priority" class="form-select" required>
                         <option value="Low" selected>Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
-                    <span *ngIf="priority.value === '' || form.invalid">Please select a priority.</span>
+                    <span *ngIf="priority.value === '' && form.invalid">Please select a priority.</span>
                 </div>
                 <div class="col-md-4">
                     <button type="submit" class="btn btn-primary" [disabled]="!form.valid">+ Add New Todo</button>
@@ -61,7 +61,6 @@
     </div>
    </div>
 </section>
-
 
 <footer>
     <p>© Copyright 2020 - 2023 Scoot.test</p>

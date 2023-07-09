@@ -1,6 +1,6 @@
-<div class="todo-item completed" (click)="onTodoClicked()"
+<div class="todo-item completed"  (click)="onTodoClicked()"
         [class.completed]="todo.completed">
-    <div class="check-box">
+    <div class="check-box" appToolTip="Check">
         <i class="fa-solid fa-check"></i>
     </div>
     
@@ -11,10 +11,10 @@
     <small class="priority"> {{ todo.priority }} Priority</small>
    
     <div class="control-box" (click)="$event.stopPropagation()">
-        <div class="control-button" (click)="onEdit()">
+        <div class="control-button" appToolTip="Edit Todo" (click)="onEdit()">
             <i class="fa-solid fa-pen"></i>
         </div>
-        <div class="control-button" (click)="onDelete()">
+        <div class="control-button" appToolTip="Delete Todo" (click)="onDelete()">
             <i class="fa-solid fa-trash"></i>
         </div>
     </div>
